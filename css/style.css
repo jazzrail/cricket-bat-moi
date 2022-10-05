@@ -690,7 +690,7 @@ Calculation
 	width: 100%;
 	padding: 15px 0;
 	font-size: 18px;
-	// color: #fff;
+	color: #fff;
 	text-align: center;
 }
 
@@ -698,6 +698,12 @@ Calculation
 .form-control input:valid {
 	outline: 0;
 }
+
+input::placeholder {
+color: #ffffffa9;
+
+}
+
 h4.res {
 	font-weight: 700;
 	color: hsl(209, 35%, 30%);
@@ -715,7 +721,8 @@ h4.res {
 }
 .number-only:invalid + .error-msg {
   display: inline;
-  color: red;
+  color: rgba(2, 2, 2, 0.876);
+	font-size: 0.85rem;
 }
 
 .empty-field {
