@@ -695,7 +695,8 @@ Calculation
 	width: 100%;
 	padding: 15px 0;
 	font-size: 18px;
-	color: #fff;
+	/* color: #fff; */
+	color: hsl(209, 35%, 30%);
 	text-align: center;
 }
 
