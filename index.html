@@ -59,8 +59,8 @@
 				<p>In future all cricket bats could be sold with this value provided, and move away from static bat
 					weight.
 				</p>
-				<p>This <a href="./resources/Curtis2021_Article_MethodsForEstimatingMomentOfIn.pdf"
-						target="_blank"><span class="read-more">blog post</span></a> provides more detail on this.
+				<p>This <a href="./resources/Curtis2021_Article_MethodsForEstimatingMomentOfIn.pdf" target="_blank"><span
+							class="read-more">blog post</span></a> provides more detail on this.
 				</p>
 
 			</div>
@@ -104,12 +104,14 @@
 				Place the scales on a hard flat surface long enough to take the whole bat.
 				Turn on the scales, and ensure they are reading zero. Place the toe end of the bat on the centre of the
 				scales
-				and rest the handle end on the flat surface. Read and note the value shown (call this w1). Remove the
-				bat from
+				and rest the handle end on the flat surface. Read and note the value shown (call this w1). <br>
+				<img class="bat-book" src="images/bat-w1-1-compressed.jpg" alt="bat resting on book and scales">
+				Remove the bat from
 				the scales. Ensure the reading is zero. Now place the middle of the bat on the scales. Read and note the
 				value
 				shown (this is the total bat mass). Record the measurements in Kg. For example, if your scales read 1215
 				grammes, this is 1.215Kg. Use all the numbers provided by your scale reading.<br><br>
+				<img class="bat-scales" src="images/bat-totmass-compressed.jpg" alt="bat on sales showing reading">
 				Balance point is calculated as the total bat length multiplied by w1, which is then divided by total
 				batmass.<br>
 				Balance point = (total bat length x w1) / total bat mass
@@ -126,26 +128,26 @@
 			<form>
 				<div class="form-control">
 					<label>Handle Length</label>
-					<input type='text' inputmode="decimal" class='number-only' pattern='^\d*(\.\d{0,3})?$'
-						name="handleLen" id="handleLen" placeholder="Example: 0.3" />
+					<input type='text' inputmode="decimal" class='number-only' pattern='^\d*(\.\d{0,3})?$' name="handleLen"
+						id="handleLen" placeholder="Example: 0.3" />
 					<span class='error-msg'>Please enter a valid integer or float value (max 3 decimal places).</span>
 				</div>
 				<div class="form-control">
 					<label>Blade Length</label>
-					<input type='text' inputmode="decimal" class='number-only' pattern='^\d*(\.\d{0,2})?$'
-						name="bladeLen" id="bladeLen" placeholder="Example: 0.56" />
+					<input type='text' inputmode="decimal" class='number-only' pattern='^\d*(\.\d{0,2})?$' name="bladeLen"
+						id="bladeLen" placeholder="Example: 0.56" />
 					<span class='error-msg'>Please enter a valid integer or float value.</span>
 				</div>
 				<div class="form-control">
 					<label>Bat Mass</label>
-					<input type='text' inputmode="decimal" class='number-only' pattern='[+\-]?\d*\.?\d+/]'
-						name="batMass" id="batMass" placeholder="Example: 1.3" />
+					<input type='text' inputmode="decimal" class='number-only' pattern='[+\-]?\d*\.?\d+/]' name="batMass"
+						id="batMass" placeholder="Example: 1.3" />
 					<span class='error-msg'>Please enter a valid integer or float value.</span>
 				</div>
 				<div class="form-control">
 					<label>Balance Point</label>
-					<input type='text' inputmode="decimal" class='number-only' pattern='[+\-]?\d*\.?\d+/]'
-						name="balPoint" id="balPoint" placeholder="Example: 0.5" />
+					<input type='text' inputmode="decimal" class='number-only' pattern='[+\-]?\d*\.?\d+/]' name="balPoint"
+						id="balPoint" placeholder="Example: 0.5" />
 					<span class='error-msg'>Please enter a valid integer or float value.</span>
 				</div>
 
