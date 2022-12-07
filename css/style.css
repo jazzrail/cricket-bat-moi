@@ -44,28 +44,35 @@ Variables
   --radius: 0.5rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --header-background: #235d61;
 }
+
 /*
 ===============
 Global Styles
 ===============
 */
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
+
 body {
+  margin: 0;
+  padding: 0;
   font-family: var(--ff-primary);
   background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
 }
+
 a {
   text-decoration: none;
 }
+
 /* img:not(.nav-logo) {
   width: 100%;
   display: block;
@@ -74,6 +81,7 @@ img {
   width: 100%;
   display: block;
 }
+
 h1,
 h2,
 h3,
@@ -83,257 +91,244 @@ h4 {
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
+
 h1 {
   font-size: 3rem;
 }
+
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.25rem;
 }
+
 h4 {
   font-size: 0.875rem;
 }
+
 p {
   margin-bottom: 0.8rem;
-
-  @media screen and (min-width: 800px) {
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2.5rem;
-    }
-    h3 {
-      font-size: 1.75rem;
-    }
-    h4 {
-      font-size: 1rem;
-    }
-    body {
-      font-size: 1.2rem;
-    }
-    h1,
-    h2,
-    h3,
-    h4 {
-      line-height: 1;
-    }
-  }
-
-  /*_*_*_*_*_*_*_*_* Navigation *_*_*_*_*_*_*_*_*_*/
-  /* // nav {
-  // 	display: flex;
-  // 	/* justify-content: space-around; */
-  // 	align-items: center;
-  // 	min-height: 8vh;
-  // 	font-family: 'Lato', sans-serif;
-  // 	font-weight: 700;
-  // 	/* background-color: rgba(38, 131, 137, 0.8); */
-  // 	background-color: var(--clr-primary-5);
-  // }
-
-  // .main-nav__logo {
-  // 	font-size: 1rem;
-  // 	color: var(--clr-white);
-  // 	// align-items: center;
-  // }
-
-  // .main-nav__logo p {
-  // 	font-size: 1rem;
-  // 	margin-bottom: 12px;
-  // 	color: var(--clr-white);
-  // }
-
-  // .main-nav__logo-img {
-  // 	height: 40px;
-  // 	width: 40px;
-  // 	border-radius: 50%;
-  // 	display: inline-block;
-  // } */
-
-  @media (max-width: 465px) {
-    p.logo-text {
-      display: none;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .hero-banner h1 {
-      font-size: 2rem;
-    }
-  }
-
-  .main-nav {
-    color: var(--clr-white);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    padding-left: 15px;
-  }
-
-  .navbar {
-    width: 300px;
-    height: 100%;
-    background-color: var(--clr-grey-1);
-    position: fixed;
-    top: 0;
-    right: -360px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20% 0 0 60%;
-    transition: right 0.8s cubic-bezier(1, 0, 0, 1);
-  }
-
-  .change {
-    right: 0;
-  }
-
-  .hamburger-menu {
-    width: 35px;
-    height: 30px;
-    position: fixed;
-    top: 20px;
-    right: 50px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .line {
-    width: 100%;
-    height: 3px;
-    background-color: chocolate;
-    transition: all 0.8s;
-  }
-
-  .change .line-1 {
-    transform: rotateZ(-405deg) translate(-8px, 6px);
-  }
-
-  .change .line-2 {
-    opacity: 0;
-  }
-
-  .change .line-3 {
-    transform: rotateZ(405deg) translate(-8px, -6px);
-  }
-
-  .nav-list {
-    text-align: right;
-  }
-
-  .nav-item {
-    list-style: none;
-    margin: 25px;
-  }
-
-  .nav-link {
-    text-decoration: none;
-    font-size: 22px;
-    color: #eee;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 3px 0;
-  }
-
-  .nav-link::before,
-  .nav-link::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: chocolate;
-    position: absolute;
-    left: 0;
-    transform: scaleX(0);
-    transition: transform 0.5s;
-  }
-
-  .nav-link::after {
-    bottom: 0;
-    transform-origin: right;
-  }
-
-  .nav-link::before {
-    top: 0;
-    transform-origin: left;
-  }
-  /* Don't need this declarations as top is set as 0 by default. */
-
-  .nav-link:hover::before,
-  .nav-link:hover::after {
-    transform: scaleX(1);
-  }
-
-  @media screen and (max-width: 1120px) {
-    .nav-links {
-      width: 70%;
-    }
-  }
-
-  // // @media screen and (max-width: 1024px) {
-  // // 	.nav-links {
-  // // 		width: 60%;
-  // // 	}
-  // // }
-
-  // @media screen and (max-width: 1100px) {
-  // 	body {
-  // 		overflow-x: hidden;
-  // 	}
-  // 	.nav-links {
-  // 		position: absolute;
-  // 		right: 0px;
-  // 		height: 92vh;
-  // 		top: 8vh;
-  // 		background-color: rgba(139, 195, 74, 0.8);
-  // 		display: flex;
-  // 		flex-direction: column;
-  // 		align-items: center;
-  // 		width: 50%;
-  // 		transform: translateX(100%);
-  // 		transition: transform 0.5s ease-in;
-  // 	}
-
-  // 	.nav-links li {
-  // 		opacity: 0;
-  // 	}
-
-  // 	.burger {
-  // 		display: block;
-  // 	}
-  // }
-
-  // .nav-active {
-  // 	transform: translateX(0%);
-  // }
-
-  // @keyframes navLinkFade {
-  // 	from {
-  // 		opacity: 0;
-  // 		transform: translateX(50px);
-  // 	}
-  // 	to {
-  // 		opacity: 1;
-  // 		transform: translateX(0px);
-  // 	}
-  // }
-
-  // .toggle .line1 {
-  // 	transform: rotate(-45deg) translate(-5px, 6px);
-  // }
-  // .toggle .line2 {
-  // 	opacity: 0;
-  // }
-  // .toggle .line3 {
-  // 	transform: rotate(45deg) translate(-5px, -6px);
 }
+
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  body {
+    font-size: 1.2rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+
+/*_*_*_*_*_*_*_*_* Navigation *_*_*_*_*_*_*_*_*_*/
+header {
+  background: var(--header-background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+header h1.small-logo {
+  display: none;
+}
+
+@media screen and (max-width: 350px) {
+  header h1.small-logo {
+    display: block;
+    font-size: 1.2rem;
+  }
+
+  header h1 {
+    display: none;
+  }
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, 0.75);
+}
+
+.nav-toggle-label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--header-background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: var(--clr-primary-5);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 900px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 0.1fr auto minmax(600px, 2fr) 0.3fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: #8bc34a;
+    position: absolute;
+    top: -0.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
 /*_*_*_*_*_*_*_*_* End of Navigation *_*_*_*_*_*_*_*_*_*/
 
 /*  global classes */
@@ -352,28 +347,35 @@ p {
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
+
 .btn:hover {
   color: var(--clr-primary-1);
   background: var(--clr-primary-8);
 }
+
 .section {
   padding: 5rem 0;
 }
+
 .section-title {
   text-align: center;
   margin-bottom: 4rem;
 }
+
 .section-title h2 {
   text-transform: uppercase;
 }
+
 .section-title span {
   color: var(--clr-primary-5);
 }
+
 .section-center {
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
 }
+
 @media screen and (min-width: 992px) {
   .section-center {
     width: 95vw;
@@ -387,17 +389,15 @@ Hero
 */
 .hero {
   min-height: 92vh;
+  background: linear-gradient(rgb(44, 174, 186, 0.4), rgba(0, 0, 0, 0.7)),
+    url('../images/batty-hero@0.5x.png') center/cover no-repeat;
   background-color: var(--clr-primary-5);
-  /* background: linear-gradient(
-		4deg,
-		rgba(220, 237, 200, 1) 0%,
-		rgba(139, 195, 74, 1) 100%
-	); */
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-out;
 }
+
 .hero-banner {
   text-align: center;
   color: var(--clr-white);
@@ -410,6 +410,12 @@ Hero
   padding-top: 5rem;
   margin-bottom: 1.5rem;
   text-align: left;
+}
+
+@media (max-width: 380px) {
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
 }
 
 .hero-banner p {
@@ -429,6 +435,7 @@ Hero
   margin-top: 3rem;
   margin-bottom: 2rem;
 }
+
 .hero-btn:hover {
   background: transparent;
   color: var(--clr-white);
@@ -459,6 +466,7 @@ a .read-more:active {
     background: linear-gradient(rgb(44, 174, 186, 0.4), rgba(0, 0, 0, 0.7)),
       url('../images/batty-hero@0.5x.png') center/cover no-repeat;
   }
+
   .hero-banner {
     padding: 0;
   }
@@ -471,6 +479,7 @@ a .read-more:active {
   .hero-banner span {
     color: var(--clr-primary-5);
   }
+
   .hero-banner p {
     max-width: 60%;
     font-size: 1.2rem;
@@ -504,6 +513,7 @@ a .read-more:active {
     transform: translateY(-1px);
   }
 }
+
 /*
 ===============
 Instructions
@@ -538,6 +548,7 @@ img.bat-handle-img {
 ol {
   line-height: 1.5;
 }
+
 .steps {
   clear: both;
   list-style: none;
@@ -552,6 +563,7 @@ ol {
   position: relative;
   counter-increment: inst;
 }
+
 .steps li::before {
   content: counter(inst);
 
@@ -579,6 +591,7 @@ ol {
 
   z-index: -1;
 }
+
 @media (min-width: 33em) {
   .steps li:before {
     border-radius: 50%;
@@ -598,11 +611,13 @@ ol {
     max-width: 550px;
     margin: 0 auto;
   }
+
   #instructions h2 {
     text-align: center;
     padding-top: 3rem;
     font-size: 1.5rem;
   }
+
   .instructions_intro {
     font-size: 1.2rem;
     color: var(--clr-grey-1);
@@ -660,9 +675,11 @@ Calculation
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .btn-calc:focus {
   outline: 0;
 }
+
 .btn-calc:active {
   transform: scale(0.98);
 }
@@ -670,6 +687,7 @@ Calculation
 #res {
   transition: all 2s;
 }
+
 .text {
   margin-top: 30px;
 }
@@ -719,11 +737,14 @@ h4.res {
 }
 
 .error-msg {
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
 }
+
 .number-only:invalid {
   background: var(--clr-primary-1);
 }
+
 .number-only:invalid + .error-msg {
   display: inline;
   color: rgba(2, 2, 2, 0.876);
@@ -763,15 +784,18 @@ h4.res {
     max-width: 60%;
     margin: 0 auto;
   }
+
   .about h2 {
     text-align: center;
     /* padding-top: 3rem; */
     font-size: 1.5rem;
   }
+
   .about_intro {
     font-size: 1.2rem;
   }
 }
+
 /* end of about */
 
 /*
@@ -781,7 +805,7 @@ Footer
 */
 
 .footer {
-  background-color: var(--clr-grey-1);
+  background-color: var(--header-background);
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -793,6 +817,7 @@ Footer
   justify-content: center;
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 .footer-link {
