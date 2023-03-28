@@ -87,7 +87,7 @@ h2,
 h3,
 h4 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   line-height: 1.25;
   margin-bottom: 0.75rem;
 }
@@ -179,7 +179,7 @@ header h1.small-logo {
   left: -9999px !important;
 }
 
-.nav-toggle:focus~.nav-toggle-label {
+.nav-toggle:focus ~ .nav-toggle-label {
   outline: 3px solid rgba(lightblue, 0.75);
 }
 
@@ -255,11 +255,11 @@ nav a:hover {
   color: var(--clr-primary-5);
 }
 
-.nav-toggle:checked~nav {
+.nav-toggle:checked ~ nav {
   transform: scale(1, 1);
 }
 
-.nav-toggle:checked~nav a {
+.nav-toggle:checked ~ nav a {
   opacity: 1;
   transition: opacity 250ms ease-in-out 250ms;
 }
@@ -752,7 +752,7 @@ h4.res {
   background: var(--clr-primary-1);
 }
 
-.number-only:invalid+.error-msg {
+.number-only:invalid + .error-msg {
   display: inline;
   color: rgba(2, 2, 2, 0.876);
   font-size: 0.85rem;
